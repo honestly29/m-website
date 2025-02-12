@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 const rows = 12;
 const cols = 15;
-const tileSize = 70;
+const tileSize = 60;
 
 canvas.width = cols * tileSize;
 canvas.height = rows * tileSize;
@@ -19,7 +19,8 @@ const playerImage = new Image();
 playerImage.src = "./images/kikoImg.png"; // Kiko image as the player
 
 const whiteHeartImage = new Image();
-whiteHeartImage.src = "https://media.tenor.com/wnVuzMq9fYsAAAAi/love-heart.gif"; // White heart GIF for winning
+//whiteHeartImage.src = "https://media.tenor.com/wnVuzMq9fYsAAAAi/love-heart.gif"; // White heart GIF for winning
+whiteHeartImage.src = "images/bowie.png";
 
 const buzzBallImage = new Image();
 buzzBallImage.src = "images/buzzball.png"; // Buzz ball image as obstacle
