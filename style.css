@@ -7,8 +7,8 @@
 /* Body styling */
 body { 
     text-align: center;
-    background: #dde9ff url('https://i.imgur.com/nVVaZgV.jpg') no-repeat center center fixed; /* Soft pink background with the image */
-    background-size: cover; /* Ensures the image covers the entire background */
+    background: #dde9ff; /*url('https://i.imgur.com/nVVaZgV.jpg') no-repeat center center fixed;*/ /* Soft pink background with the image */
+    /*background-size: cover;*/ /* Ensures the image covers the entire background */
     display: flex;
     flex-direction: column;
     justify-content: center;
