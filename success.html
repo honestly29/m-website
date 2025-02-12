@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Photos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #b94ac1;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .gallery {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .photo {
+            position: absolute;
+            width: 400px;
+            height: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+            top: -520px;
+            animation: fall 5s linear infinite;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @keyframes fall {
+            0% {
+                top: -520px;
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Singapore !!!</h1>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageUrls = [
+                "images/IMG_6020.JPG", "images/IMG_6039.JPG", "images/IMG_6040.JPG",
+                "images/IMG_6060.JPG", "images/IMG_6069.jpeg", "images/IMG_6073.JPG",
+                "images/IMG_6075.JPG", "images/IMG_6103.JPG", "images/IMG_6111.JPG",
+                "images/IMG_6143.jpeg", "images/IMG_6157.JPG", "images/IMG_6196.JPG",
+                "images/IMG_6197.JPG", "images/IMG_6198.JPG", "images/IMG_6202.JPG",
+                "images/IMG_6249.JPG", "images/IMG_6262.JPG", "images/IMG_7325.PNG",
+                "images/IMG_7331.jpeg", "images/IMG_7333.jpeg", "images/IMG_7336.jpeg",
+                "images/IMG_7340.jpeg", "images/IMG_7345.jpeg", "images/IMG_7356.jpeg",
+                "images/IMG_7362.jpeg", "images/IMG_7363.jpeg", "images/IMG_7368.jpeg",
+                "images/IMG_7374.jpeg", "images/IMG_7393.jpeg", "images/IMG_7395.jpeg",
+                "images/IMG_7403.jpeg", "images/IMG_7409.jpeg", "images/IMG_7422.jpeg",
+                "images/IMG_7424.jpeg", "images/IMG_7427.jpeg", "images/IMG_7433.jpeg",
+                "images/IMG_7436.jpeg", "images/IMG_7439.jpeg", "images/IMG_7444.jpeg",
+                "images/IMG_7447.jpeg", "images/IMG_7451.jpeg", "images/IMG_7459.jpeg",
+                "images/IMG1.JPG", "images/IMG2.JPG",
+            ];
+
+            const gallery = document.getElementById("gallery");
+            const columns = 3;
+            const spacing = window.innerWidth / columns;
+            let index = 0;
+            
+            function addImage() {
+                const imgContainer = document.createElement("div");
+                imgContainer.classList.add("photo");
+                
+                const img = document.createElement("img");
+                img.src = imageUrls[index % imageUrls.length];
+                img.alt = "Holiday Photo";
+                
+                imgContainer.style.left = `${(index % columns) * spacing + spacing / 6}px`;
+                imgContainer.appendChild(img);
+                gallery.appendChild(imgContainer);
+                
+                setTimeout(() => {
+                    gallery.removeChild(imgContainer);
+                }, 5000);
+                
+                index++;
+                setTimeout(addImage, 1400);
+            }
+            
+            addImage();
+        });
+    </script>
+</body>
+</html>
