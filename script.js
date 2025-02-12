@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 const rows = 12;
 const cols = 15;
-const tileSize = 80;
+const tileSize = 70;
 
 canvas.width = cols * tileSize;
 canvas.height = rows * tileSize;
