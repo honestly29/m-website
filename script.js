@@ -103,6 +103,11 @@ function movePlayer(dx, dy) {
             showGameOver();
         }
 
+         // Obstacle condition
+         if (player.x === buzzBallPos2.x && player.y === buzzBallPos2.y) {
+            showGameOver();
+        }
+
         drawMaze();
     }
 }
