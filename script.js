@@ -104,7 +104,7 @@ function movePlayer(dx, dy) {
         }
 
          // Obstacle condition
-         if (player.x === buzzBallPos2.x && player.y === buzzBallPos2.y) {
+         if (player.x === buzzBall2Pos.x && player.y === buzzBall2Pos.y) {
             showGameOver();
         }
 
